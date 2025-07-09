@@ -77,6 +77,7 @@ def test_question_10_query():
 
 def send_post_request(url: str, data: dict, headers: dict = None):
     try:
+        print(f"Sending POST request to {url} with data: {data} and headers: {headers}")
         response = requests.post(url, json=data, headers=headers)
         response.raise_for_status()  # hata varsa exception fırlatır
         return response.json()
@@ -109,7 +110,7 @@ def run_tests():
     
     url = "https://edugen-backend-487d2168bc6c.herokuapp.com/projectLog/"
     payload = {
-        "user_id": 34,
+        "user_id": 233,
         "project_id": 34,
         "user_score": round(user_score, 2),
         "is_auto": False
